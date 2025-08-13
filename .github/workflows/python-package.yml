@@ -1,15 +1,17 @@
 name: 디스코드 알림봇
 
 on:
-  schedule: # UTC+9 기준 3시 실행
-    - cron:  "35 2 * * *"
+  schedule:
+    - cron: "35 2 * * *"   # 매일 02:30 UTC = 11:35 KST
+  workflow_dispatch:
 
 jobs:
   message:
     runs-on: ubuntu-latest
     steps:
-    - name: Discord Webhook Action
-      uses: tsickert/discord-webhook@v5.3.0
-      with:
-        webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-        content: "일일퀘스트, 접속보상, 추천, 수박 하슈. 뿡"
+      - name: Discord Webhook Action
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          content: "일일퀘스트, 접속보상, 추천, 수박 하슈. 뿡"
+
