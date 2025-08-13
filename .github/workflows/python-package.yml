@@ -2,7 +2,7 @@ name: 디스코드 알림봇
 
 on:
   schedule:
-    - cron: "35 2 * * *"   # 매일 02:30 UTC = 11:35 KST
+    - cron: "18 14 * * *"   # 매일 02:30 UTC = 11:35 KST
   workflow_dispatch:
 
 jobs:
